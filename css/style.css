@@ -33,14 +33,17 @@ h3 {
 }
 
 .center {
-  padding-left: calc(50% - 600px);
-  padding-right: calc(50% - 600px);
+  padding-left: max(50% - 600px, 32px);
+  padding-right: max(50% - 600px, 32px);
 }
 
 .wellcome {
   padding-top: 196px;
   min-height: 800px;
   background-color: #E1FF8F;
+  background-image: url("../pictures/big_star.svg");
+  background-repeat: no-repeat;
+  background-position: 100% 0;
 }
 .wellcome__header {
   margin-bottom: 24px;
@@ -69,6 +72,7 @@ h3 {
   padding-top: 94px;
   padding-bottom: 50px;
   color: #FFF;
+  overflow-x: hidden;
 }
 .about__header {
   font-size: 64px;
@@ -82,6 +86,18 @@ h3 {
   display: flex;
   justify-content: flex-start;
   gap: 32px;
+  position: relative;
+}
+.about__content::before {
+  content: "";
+  position: absolute;
+  width: 650px;
+  height: 650px;
+  background-image: url("../pictures/about_big.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  right: -280px;
+  top: -290px;
 }
 .about__column {
   display: flex;
@@ -89,6 +105,7 @@ h3 {
   gap: 32px;
   flex: 1 1 30%;
   background-color: transparent;
+  z-index: 10;
 }
 .about__item {
   background-color: #FFF;
