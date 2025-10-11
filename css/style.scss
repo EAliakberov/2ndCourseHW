@@ -29,7 +29,7 @@ $border-radius: 30px;
     }
 }
 
-body{
+body {
     display: flex;
     flex-direction: column;
 }
@@ -68,8 +68,8 @@ h3 {
 
 
 .center {
-    padding-left: calc(50% - 600px);
-    padding-right: calc(50% - 600px);
+    padding-left: max(calc(50% - 600px), 32px);
+    padding-right: max(calc(50% - 600px), 32px);
 }
 
 .wellcome {
@@ -77,6 +77,9 @@ h3 {
     min-height: 800px;
 
     background-color: $clr-light-grn;
+    background-image: url("../pictures/big_star.svg");
+    background-repeat: no-repeat;
+    background-position: 100% 0;
 
     &__header {
         margin-bottom: 24px;
@@ -93,10 +96,13 @@ h3 {
 
 .about {
     background-color: $clr-dark;
+
     padding-top: 94px;
     padding-bottom: 50px;
 
     color: $clr-light;
+    overflow-x: hidden;
+
 
     &__header {
         font-size: $font-size-h1;
@@ -112,6 +118,20 @@ h3 {
         display: flex;
         justify-content: flex-start;
         gap: 32px;
+        position: relative;
+        
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 650px;
+            height: 650px;
+            background-image: url('../pictures/about_big.svg');
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            right: -280px;
+            top: -290px;
+        }
     }
 
     &__column {
@@ -121,6 +141,7 @@ h3 {
 
         flex: 1 1 30%;
         background-color: transparent;
+        z-index: 10;
     }
 
     &__item {
@@ -186,7 +207,8 @@ h3 {
 
         &:nth-child(2n+1) {
             direction: rtl;
-            > *{
+
+            >* {
                 direction: ltr;
             }
         }
@@ -196,7 +218,7 @@ h3 {
         display: block;
         overflow: hidden;
         width: 100%;
-        
+
         border-radius: $border-radius;
     }
 
@@ -206,20 +228,20 @@ h3 {
         flex-direction: column;
         align-items: flex-start;
 
-        
+
         color: $clr-dark;
 
         padding: 48px;
     }
 
-    &__item-header{
+    &__item-header {
         font-size: $font-size-h2;
         margin-bottom: 24px;
     }
 
     &__item-description {
         margin-bottom: 36px;
-        
+
     }
 
     &__item-button {
@@ -227,7 +249,7 @@ h3 {
     }
 }
 
-.footer{    
+.footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -236,7 +258,7 @@ h3 {
 
     background-color: $clr-dark-grn;
 
-    &__rights{
+    &__rights {
         font-size: 24px;
         font-weight: 600;
     }
