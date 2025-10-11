@@ -1,11 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <title>Мини Игры!</title>
 </head>
+
 <body>
-    
+    <header class="header">
+        <section class="wellcome center">
+            <h1 class="wellcome__header">Добро пожаловать <br> на мой сайт мини-игр</h1>
+            <p class="wellcome__text">Тебе предстоит пройти несколько увлекательных игр.<br> Если готов, нажимай
+                <b>«Поехали!»</b> и <b>приступай</b>.
+            </p>
+            <a class="wellcome__lets-go-btn" href="#about-section">Поехали!</a>
+            <div class="wellcome__animated-line"></div>
+        </section>
+    </header>
+
+    <section class="about center" id="about-section">
+        <h2 class="about__header">Об играх</h2>
+        <p class="about__text">В моей коллекции представлено 6 игр на разные темы.<br>Игры несложные — в них может поиграть каждый.<br>Все игры доступны для пользования.</p>
+        <div class="about__content">
+            <div class="about__column">
+                <a href="" class="about__item">
+                    <img src="./pictures/card_1.svg" alt="карточка 6" class="about__item-img">
+                    <p class="about__item-text">Игра № 1</p>
+                    <h3 class="about__item-header">Угадай число</h3>
+                </a>
+                <a href="" class="about__item">
+                    <img src="./pictures/card_4.webp" alt="карточка 6" class="about__item-img">
+                    <p class="about__item-text">Игра № 4</p>
+                    <h3 class="about__item-header">Камень, <br>ножницы, <br>бумага</h3>
+                </a>
+            </div>
+            <div class="about__column">
+                <a href="" class="about__item">
+                    <img src="./pictures/card_2.svg" alt="карточка 6" class="about__item-img">
+                    <p class="about__item-text">Игра № 2</p>
+                    <h3 class="about__item-header">Простая <br>арифметика</h3>
+                </a>
+                <a href="" class="about__item">
+                    <img src="./pictures/card_5.svg" alt="карточка 6" class="about__item-img">
+                    <p class="about__item-text">Игра № 5</p>
+                    <h3 class="about__item-header">Простая викторина</h3>
+                </a>
+            </div>
+            <div class="about__column">
+                <a href="" class="about__item">
+                    <img src="./pictures/card_3.svg" alt="карточка 6" class="about__item-img">
+                    <p class="about__item-text">Игра № 3</p>
+                    <h3 class="about__item-header">Переверни текст</h3>
+                </a>
+                <a href="" class="about__item">
+                    <img src="./pictures/card_6.svg" alt="карточка 6" class="about__item-img">
+                    <p class="about__item-text">Игра № 6</p>
+                    <h3 class="about__item-header">Генератор<br>случайных<br> цветов</h3>
+                </a>
+            </div>
+
+
+        </div>
+    </section>
+    <section class="games center">
+        <h2 class="games__header">Мини-игры</h2>
+        <div class="games__content">
+            <article class="games__item">
+                <img src="./pictures/card_big_1.webp" alt="Картинка игры" class="games__item-pict">
+                <div class="games__item-text">
+                    <h3 class="games__item-header">Угадай число</h3>
+                    <p class="games__item-description">Попробуй угадать случайное<br> число от 1 до 100.</p>
+                    <button class="games__item-button">Играть!</button>
+                </div>
+            </article>
+            <article class="games__item">
+                <img src="./pictures/card_big_2.webp" alt="Картинка игры" class="games__item-pict">
+                <div class="games__item-text">
+                    <h3 class="games__item-header">Простая<br> арифметика</h3>
+                    <p class="games__item-description">Попробуй решить простые<br> арифметические задачи.</p>
+                    <button class="games__item-button">Играть!</button>
+                </div>
+            </article>
+            <article class="games__item">
+                <img src="./pictures/card_big_3.webp" alt="Картинка игры" class="games__item-pict">
+                <div class="games__item-text">
+                    <h3 class="games__item-header">Переверни текст</h3>
+                    <p class="games__item-description">Попробуй ввести текст, который<br> будет перевернут.</p>
+                    <button class="games__item-button">Играть!</button>
+                </div>
+            </article>
+            <article class="games__item">
+                <img src="./pictures/card_big_4.webp" alt="Картинка игры" class="games__item-pict">
+                <div class="games__item-text">
+                    <h3 class="games__item-header">Камень,<br>ножницы,<br>бумага</h3>
+                    <p class="games__item-description">Сыграй в популярную игру<br> против компьютера.</p>
+                    <button class="games__item-button">Играть!</button>
+                </div>
+            </article>
+            <article class="games__item">
+                <img src="./pictures/card_big_5.webp" alt="Картинка игры" class="games__item-pict">
+                <div class="games__item-text">
+                    <h3 class="games__item-header">Простая<br>викторина</h3>
+                    <p class="games__item-description">Отвечай на вопросы викторины<br> с вариантами ответов.</p>
+                    <button class="games__item-button">Играть!</button>
+                </div>
+            </article>
+            <article class="games__item">
+                <img src="./pictures/card_big_6.webp" alt="Картинка игры" class="games__item-pict">
+                <div class="games__item-text">
+                    <h3 class="games__item-header">Генератор<br>случайных<br>цветов</h3>
+                    <p class="games__item-description">Игра, в которой при клике на кнопку<br> фон страницы меняется на случайный.</p>
+                    <button class="games__item-button">Играть!</button>
+                </div>
+            </article>
+        </div>
+    </section>
+    <footer class="footer">
+        <p class="footer__rights">Все права защищены.</p>        
+    </footer>
 </body>
+
 </html>

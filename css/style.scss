@@ -1,0 +1,349 @@
+$clr-light-grn: #E1FF8F;
+$clr-dark-grn: #BCEC30;
+$clr-dark: #202027;
+$clr-light: #FFF;
+
+$font-size-h1: 64px;
+$font-size-h2: 48px;
+$font-size-h3: 32px;
+
+$border-radius: 30px;
+
+@mixin main-btn {
+    padding: 16px 65px;
+
+    font-size: 24px;
+    line-height: 32px;
+
+    font-weight: 600;
+
+    color: $clr-light;
+    border-radius: 999px;
+    border: none;
+    background-color: $clr-dark;
+
+    &:hover {
+        background-color: transparent;
+        color: $clr-dark;
+
+        outline: solid $clr-dark 1px;
+        outline-offset: -1px;
+    }
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: "Montserrat", sans-serif;
+
+
+
+    transition: all 0.1s;
+}
+
+h1 {
+    font-size: $font-size-h1;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: $font-size-h2;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: $font-size-h3;
+    font-weight: 700;
+}
+
+body {
+    font-size: 24px;
+}
+
+.center {
+    padding-left: max(calc(50% - 600px), 32px);
+    padding-right: max(calc(50% - 600px), 32px);
+}
+
+.wellcome {
+    padding-top: 196px;
+    min-height: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    background-color: $clr-light-grn;
+    background-image: url("../pictures/big_star.svg");
+    background-repeat: no-repeat;
+    background-position: 100% 0;
+
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 128px;
+        height: 82px;
+        background-image: url('../pictures/wellcome_stars.svg');
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        left: max(0px, calc(50% - 657px));
+        top: 68px;
+    }
+
+    &__header {
+        margin-bottom: 24px;
+    }
+
+    &__text {
+        padding-bottom: 48px;
+        line-height: 32px;
+        & b{
+            font-weight: 600
+        }
+    }
+
+    &__lets-go-btn {
+        @include main-btn;
+    }
+}
+
+.about {
+    background-color: $clr-dark;
+
+    padding-top: 94px;
+    padding-bottom: 50px;
+
+    color: $clr-light;
+    overflow-x: hidden;
+
+
+    &__header {
+        font-size: $font-size-h1;
+        margin-bottom: 24px;
+    }
+
+    &__text {
+        line-height: 32px;
+        margin-bottom: 72px;
+        max-width: 778px;
+    }
+
+    &__content {
+        display: flex;
+        justify-content: flex-start;
+        gap: 32px;
+        position: relative;
+
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 650px;
+            height: 650px;
+            background-image: url('../pictures/about_big.svg');
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            right: -263px;
+            top: -287px;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 75px;
+            height: 112px;
+            background-image: url('../pictures/about_small.svg');
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            left: -95px;
+            top: 405px;
+        }
+
+
+    }
+
+    &__column {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        flex: 1 1 30%;
+        background-color: transparent;
+        z-index: 10;
+    }
+
+    &__item {
+        background-color: $clr-light;
+        color: $clr-dark;
+        flex: 1 1 50%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        border-radius: $border-radius;
+
+        &:hover {
+            transform: scale(1.06);
+        }
+    }
+
+    &__item-img {
+        width: 100%;
+    }
+
+    &__item-text {
+        margin-right: 32px;
+        margin-left: 32px;
+        margin-bottom: 16px;
+        margin-top: 32px;
+
+        font-size: 16px;
+        line-height: 18px;
+        font-weight: 500;
+
+        padding: 8px 16px 10px 16px;
+
+        border-radius: 999px;
+        background-color: #F7F7F7;
+    }
+
+    &__item-header {
+        margin-right: 32px;
+        margin-left: 32px;
+        margin-bottom: 36px;
+    }
+
+}
+
+.games {
+    background-color: $clr-dark;
+    padding-top: 46px;
+    padding-bottom: 144px;
+
+    color: $clr-light;
+
+    &__header {
+        font-size: $font-size-h1;
+        margin-bottom: 72px;
+    }
+
+    &__content {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+
+        justify-content: flex-start;
+        align-items: stretch;
+        gap: 32px;
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 139px;
+            height: 89px;
+            background-image: url('../pictures/games_after.svg');
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            right: -69px;
+            bottom: -98px;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 113px;
+            height: 103px;
+            background-image: url('../pictures/games_before.svg');
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            right: -73px;
+            top: -102px;
+        }
+    }
+
+    &__item {
+        display: grid;
+        z-index: 10;
+        grid-template-columns: 1fr 1fr;
+
+        border-radius: $border-radius;
+        background-color: $clr-light;
+
+        overflow: hidden;
+
+        &:nth-child(2n+1) {
+            direction: rtl;
+
+            >* {
+                direction: ltr;
+            }
+        }
+    }
+
+    &__item-pict {
+        display: block;
+        overflow: hidden;
+        width: 100%;
+
+        border-radius: $border-radius;
+    }
+
+
+    &__item-text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+
+        color: $clr-dark;
+
+        padding: 48px;
+
+
+    }
+
+    &__item-header {
+        font-size: $font-size-h2;
+        margin-bottom: 24px;
+    }
+
+    &__item-description {
+        margin-bottom: 36px;
+        line-height: 32px
+    }
+
+    &__item-button {
+        @include main-btn();
+        padding-left: 75px;
+        padding-right: 75px;
+    }
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 61px 0;
+
+    background-color: $clr-dark-grn;
+
+    &__rights {
+        font-size: 24px;
+        font-weight: 600;
+    }
+}
