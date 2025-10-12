@@ -32,6 +32,7 @@ $border-radius: 30px;
 }
 
 body {
+    min-width: 300px;
     display: flex;
     flex-direction: column;
 }
@@ -48,9 +49,8 @@ a {
 
     font-family: "Montserrat", sans-serif;
 
-
-
-    transition: all 0.1s;
+    transition: all 0.1s, width 0s;
+    
 }
 
 h1 {
@@ -84,6 +84,7 @@ body {
     flex-direction: column;
     align-items: flex-start;
 
+    overflow-x: hidden;
     background-color: $clr-light-grn;
     background-image: url("../pictures/big_star.svg");
     background-repeat: no-repeat;
@@ -108,9 +109,11 @@ body {
     }
 
     &__text {
+        max-width: 740px;
         padding-bottom: 48px;
         line-height: 32px;
-        & b{
+
+        & b {
             font-weight: 600
         }
     }
@@ -235,6 +238,7 @@ body {
     padding-bottom: 144px;
 
     color: $clr-light;
+    overflow-x: hidden;
 
     &__header {
         font-size: $font-size-h1;
@@ -345,5 +349,196 @@ body {
     &__rights {
         font-size: 24px;
         font-weight: 600;
+    }
+}
+
+@media (max-width: 1240px) {
+
+    .wellcome {
+        &__header {
+            font-size: 40px;
+            margin-bottom: 24px;
+        }
+
+        &__text {
+            max-width: 490px;
+            padding: 0;
+            font-size: 16px;
+            line-height: 100%;
+            margin-bottom: 36px;
+        }
+
+        &__lets-go-btn {
+            font-size: 16px;
+            line-height: 100%;
+            padding-bottom: 16px;
+            padding-top: 16px;
+        }
+    }
+
+    .about {
+        padding-top: 94px;
+        padding-bottom: 50px;
+
+        &__header {
+            font-size: $font-size-h2;
+            margin-bottom: 24px;
+        }
+
+        &__text {
+            font-size: 16px;
+            line-height: 20px;
+        }
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+
+            gap: 24px;
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+
+                right: -263px;
+                top: -287px;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+
+                left: -95px;
+                top: 405px;
+            }
+        }
+
+        &__column {
+            display: flex;
+            flex-direction: row;
+            gap: 24px;
+            height: auto;
+        }
+
+        &__item {
+            flex: 1 1 40%;
+            overflow: hidden;
+        }
+
+        &__item-img {
+            width: 100%;
+            border-radius: $border-radius;
+        }
+
+        &__item-text {
+            margin-right: 24px;
+            margin-left: 24px;
+            margin-bottom: 16px;
+            margin-top: 24px;
+        }
+
+        &__item-header {
+            margin-right: 24px;
+            margin-left: 24px;
+        }
+    }
+
+    .games {
+        &__item {
+            flex-wrap: wrap;
+        }
+
+        &__item-pict {
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        &__item-text {
+            padding: 29px;
+        }
+
+        &__item-header {
+            font-size: $font-size-h3;
+            margin-bottom: 16px;
+        }
+
+        &__item-description {
+            font-size: 16px;
+            line-height: 20px;
+            margin-bottom: 24px;
+        }
+
+        &__item-button {
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
+}
+
+@media (max-width: 720px) {
+    .center {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .wellcome {
+        text-align: center;
+        align-items: center;
+        min-height: 700px;
+        padding-top: 147px;
+
+         background-image: url("../pictures/big_star_mobile.svg");
+    
+
+        &__lets-go-btn {
+            padding: 16px 0;
+            width: calc(100% - 58px) ;
+            &:hover{
+                background-color: $clr-dark;
+                color: $clr-light;
+            }
+        }
+    }
+
+    .about {
+        display: none;
+    }
+
+    .games {
+
+
+        &__header {
+            font-size: 40px;
+        }
+        
+        &__content{
+            &::before, &::after{
+                display: none;
+            }
+        }
+
+        &__item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__item-button {
+            padding: 16px auto;
+            width: 100%;
+            &:hover{
+                background-color: $clr-dark;
+                color: $clr-light;
+            }
+        }
+    }
+
+    .footer {
+        &__rights {
+            font-size: 16px;
+            line-height: 100%;
+        }
     }
 }
