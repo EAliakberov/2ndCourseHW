@@ -37,8 +37,55 @@ body {
 }
 
 .center {
-  padding-left: max(50% - 600px, 32px);
-  padding-right: max(50% - 600px, 32px);
+  padding-left: max(50% - 600px, 40px);
+  padding-right: max(50% - 600px, 40px);
+}
+
+.header {
+  position: relative;
+  overflow-x: hidden;
+}
+.header__animation {
+  position: absolute;
+  overflow-x: hidden;
+  left: 0;
+  bottom: 0;
+}
+
+.animation {
+  min-width: 100vw;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  background-color: #BCEC30;
+}
+.animation__ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+.animation__li {
+  position: relative;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.animation__li::after {
+  content: "";
+  display: block;
+  width: 36px;
+  height: 36px;
+  margin: 0 51px;
+  background-image: url('data:image/svg+xml,<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 0L22.8616 13.1384L36 18L22.8616 22.8616L18 36L13.1384 22.8616L0 18L13.1384 13.1384L18 0Z" fill="%23202027"/></svg>');
+}
+.animation__link {
+  font-size: 30px;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .wellcome {
@@ -289,18 +336,19 @@ body {
 @media (max-width: 1240px) {
   .wellcome__header {
     font-size: 40px;
+    line-height: 49px;
     margin-bottom: 24px;
   }
   .wellcome__text {
     max-width: 490px;
     padding: 0;
     font-size: 16px;
-    line-height: 100%;
+    line-height: 20px;
     margin-bottom: 36px;
   }
   .wellcome__lets-go-btn {
     font-size: 16px;
-    line-height: 100%;
+    line-height: 22px;
     padding-bottom: 16px;
     padding-top: 16px;
   }
@@ -359,6 +407,9 @@ body {
     margin-right: 24px;
     margin-left: 24px;
   }
+  .games__content {
+    gap: 24px;
+  }
   .games__item {
     flex-wrap: wrap;
   }
@@ -369,6 +420,7 @@ body {
   }
   .games__item-text {
     padding: 29px;
+    padding-bottom: 33px;
   }
   .games__item-header {
     font-size: 32px;
@@ -377,7 +429,7 @@ body {
   .games__item-description {
     font-size: 16px;
     line-height: 20px;
-    margin-bottom: 24px;
+    margin-bottom: 32px;
   }
   .games__item-button {
     font-size: 16px;
@@ -389,26 +441,61 @@ body {
     padding-left: 16px;
     padding-right: 16px;
   }
+  .animation {
+    height: 52px;
+  }
+  .animation__li::after {
+    width: 20px;
+    height: 20px;
+    margin: 0 27px;
+    background-size: contain;
+  }
+  .animation__link {
+    font-size: 16px;
+    line-height: 20px;
+  }
   .wellcome {
     text-align: center;
     align-items: center;
     min-height: 700px;
     padding-top: 147px;
+    padding-left: 40px;
+    padding-right: 40px;
     background-image: url("../pictures/big_star_mobile.svg");
   }
   .wellcome__lets-go-btn {
-    padding: 16px 0;
-    width: calc(100% - 58px);
+    margin: 0 5px;
+    padding: 16px 0px;
+    max-width: 284px;
+    width: 100%;
+    align-self: center;
   }
   .wellcome__lets-go-btn:hover {
     background-color: #202027;
     color: #FFF;
   }
+  .wellcome::after {
+    content: "";
+    position: absolute;
+    width: 75px;
+    height: 68px;
+    background-image: url("../pictures/wellcome_stars_mobile.svg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    left: 36px;
+    top: 64px;
+  }
   .about {
     display: none;
   }
+  .games {
+    padding-top: 48px;
+    padding-bottom: 10px;
+  }
   .games__header {
     font-size: 40px;
+    line-height: 49px;
+    margin-bottom: 48px;
   }
   .games__content::before, .games__content::after {
     display: none;
@@ -425,8 +512,12 @@ body {
     background-color: #202027;
     color: #FFF;
   }
+  .footer {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
   .footer__rights {
     font-size: 16px;
-    line-height: 100%;
+    line-height: 20px;
   }
 }/*# sourceMappingURL=style.css.map */
