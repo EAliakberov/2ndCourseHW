@@ -32,6 +32,7 @@ $border-radius: 30px;
 }
 
 body {
+    min-width: 300px;
     display: flex;
     flex-direction: column;
 }
@@ -48,9 +49,8 @@ a {
 
     font-family: "Montserrat", sans-serif;
 
+    transition: all 0.1s, width 0s;
 
-
-    transition: all 0.1s;
 }
 
 h1 {
@@ -73,8 +73,63 @@ body {
 }
 
 .center {
-    padding-left: max(calc(50% - 600px), 32px);
-    padding-right: max(calc(50% - 600px), 32px);
+    padding-left: max(calc(50% - 600px), 40px);
+    padding-right: max(calc(50% - 600px), 40px);
+}
+
+.header {
+    position: relative;
+    overflow-x: hidden;
+
+    &__animation {
+        position: absolute;
+        overflow-x: hidden;
+        left: 0;
+        bottom: 0;
+    }
+}
+
+.animation {
+    min-width: 100vw;
+    width: fit-content;
+    height: 90px;
+
+    display: flex;
+    align-items: center;
+    background-color: $clr-dark-grn;    
+
+    &__ul {
+        
+        display: flex;
+        align-items: center;
+        
+        list-style: none;   
+    }
+
+    &__li{        
+        position: relative;
+        flex-wrap: nowrap;
+        flex-shrink: 0;        
+       
+        display: flex;
+        flex-wrap: nowrap;       
+
+        &::after {
+            content: '';
+            display: block;
+            width: 36px;
+            height: 36px;
+            margin: 0 51px;
+            background-image: url('data:image/svg+xml,<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 0L22.8616 13.1384L36 18L22.8616 22.8616L18 36L13.1384 22.8616L0 18L13.1384 13.1384L18 0Z" fill="%23202027"/></svg>');
+        }
+    }
+
+    &__link {
+        font-size: 30px;
+        letter-spacing: 0.04em;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
 }
 
 .wellcome {
@@ -84,6 +139,7 @@ body {
     flex-direction: column;
     align-items: flex-start;
 
+    overflow-x: hidden;
     background-color: $clr-light-grn;
     background-image: url("../pictures/big_star.svg");
     background-repeat: no-repeat;
@@ -108,9 +164,11 @@ body {
     }
 
     &__text {
+        max-width: 740px;
         padding-bottom: 48px;
         line-height: 32px;
-        & b{
+
+        & b {
             font-weight: 600
         }
     }
@@ -235,6 +293,7 @@ body {
     padding-bottom: 144px;
 
     color: $clr-light;
+    overflow-x: hidden;
 
     &__header {
         font-size: $font-size-h1;
@@ -345,5 +404,253 @@ body {
     &__rights {
         font-size: 24px;
         font-weight: 600;
+    }
+}
+
+@media (max-width: 1240px) {
+
+    .wellcome {
+        &__header {
+            font-size: 40px;
+            line-height: 49px;
+            margin-bottom: 24px;
+        }
+
+        &__text {
+            max-width: 490px;
+            padding: 0;
+            font-size: 16px;
+            line-height: 20px;
+            margin-bottom: 36px;
+        }
+
+        &__lets-go-btn {
+            font-size: 16px;
+            line-height: 22px;
+            padding-bottom: 16px;
+            padding-top: 16px;
+        }
+    }
+
+    .about {
+        padding-top: 94px;
+        padding-bottom: 50px;
+
+        &__header {
+            font-size: $font-size-h2;
+
+            margin-bottom: 24px;
+        }
+
+        &__text {
+            font-size: 16px;
+            line-height: 20px;
+        }
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+
+            gap: 24px;
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+
+                right: -263px;
+                top: -287px;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+
+                left: -95px;
+                top: 405px;
+            }
+        }
+
+        &__column {
+            display: flex;
+            flex-direction: row;
+            gap: 24px;
+            height: auto;
+        }
+
+        &__item {
+            flex: 1 1 40%;
+            overflow: hidden;
+        }
+
+        &__item-img {
+            width: 100%;
+            border-radius: $border-radius;
+        }
+
+        &__item-text {
+            margin-right: 24px;
+            margin-left: 24px;
+            margin-bottom: 16px;
+            margin-top: 24px;
+        }
+
+        &__item-header {
+            margin-right: 24px;
+            margin-left: 24px;
+        }
+    }
+
+    .games {
+
+
+        &__content {
+            gap: 24px;
+        }
+
+        &__item {
+            flex-wrap: wrap;
+
+        }
+
+
+
+        &__item-pict {
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        &__item-text {
+            padding: 29px;
+            padding-bottom: 33px;
+        }
+
+        &__item-header {
+            font-size: $font-size-h3;
+            margin-bottom: 16px;
+        }
+
+        &__item-description {
+            font-size: 16px;
+            line-height: 20px;
+            margin-bottom: 32px;
+        }
+
+        &__item-button {
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
+}
+
+@media (max-width: 720px) {
+    .center {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .animation{
+        height: 52px;
+        &__li{
+            &::after{
+                width: 20px;
+                height: 20px;
+                margin: 0 27px;
+                background-size: contain;
+            }
+        }
+
+        &__link{
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
+
+    .wellcome {
+        text-align: center;
+        align-items: center;
+        min-height: 700px;
+        padding-top: 147px;
+        padding-left: 40px;
+        padding-right: 40px;
+
+        background-image: url("../pictures/big_star_mobile.svg");
+
+
+        &__lets-go-btn {
+            margin: 0 5px;
+            padding: 16px 0px;
+            max-width: 284px;
+            width: 100%;
+            align-self: center;
+
+
+            &:hover {
+                background-color: $clr-dark;
+                color: $clr-light;
+            }
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 75px;
+            height: 68px;
+            background-image: url('../pictures/wellcome_stars_mobile.svg');
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            left: max(0px, 36px);
+            top: 64px;
+        }
+    }
+
+    .about {
+        display: none;
+    }
+
+    .games {
+        padding-top: 48px;
+        padding-bottom: 10px;
+
+        &__header {
+            font-size: 40px;
+            line-height: 49px;
+            margin-bottom: 48px;
+        }
+
+        &__content {
+
+            &::before,
+            &::after {
+                display: none;
+            }
+        }
+
+        &__item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__item-button {
+            padding: 16px auto;
+            width: 100%;
+
+            &:hover {
+                background-color: $clr-dark;
+                color: $clr-light;
+            }
+        }
+    }
+
+    .footer {
+        padding-top: 40px;
+        padding-bottom: 40px;
+
+        &__rights {
+            font-size: 16px;
+            line-height: 20px;
+        }
     }
 }
