@@ -111,8 +111,11 @@ function exercise13() {
     const onlyPositive = (arr) => {
         return arr.filter((el) => el >= 0);
     }
+    const onlyNegative = (arr) => {
+        return arr.filter((el) => el < 0);
+    }
     const numArr = [123, -28, 23, 1, - 414, 147, 527, 34, -3456];
-    console.log(onlyPositive(numArr));
+    console.log(onlyNegative(numArr));
 
 }
 function exercise14() {
