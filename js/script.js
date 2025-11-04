@@ -92,6 +92,37 @@ function reverse() {
     alert(`Исходный текст: ${text}\nПеревернутый текст: ${text.split('').reverse().join('')}`);
 }
 
+function rockPaper() {
+    let names = ["камень", "ножницы", "бумага"];
+    let resultNames = ['Проигрыш', 'Ничья', 'Победа'];
+    function ask() {
+        let answer = +prompt('Введите:\n1. Камень\n2. Ножницы\n3. Бумага\nВведите отрицательное число или нажмите esk для выхода.');
+        if (isNaN(answer) || answer > 3) {
+            return -1;
+        }
+        else {
+            return answer - 1;
+        }
+    }
+
+    function play() {
+        let answer = ask();
+        if (answer < 0) {
+            return NaN;
+        }
+        let answerPC = Math.floor(Math.random() * 3);
+        let result = (answerPC + 4 - answer) % 3 - 1;
+        alert(`Вы выбрали ${names[answer]}, \nСоперник выбрал ${names[answerPC]},\nрезультат = ${resultNames[result + 1]}`);
+        return result;
+    }
+
+    for (let i = 0; i < 10; i++) {
+        if (isNaN(play())) {
+            break;
+        }
+    }
+}
+
 
 
 btnPlayNumbers.addEventListener('click', (ev) => {
@@ -107,7 +138,7 @@ btnPlayQuiz.addEventListener('click', (ev) => {
 })
 
 btnPlayRockPaper.addEventListener('click', (ev) => {
-    
+    rockPaper();
 })
 
 btnPlayReverse.addEventListener('click', (ev) => {
