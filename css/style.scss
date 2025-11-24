@@ -35,6 +35,7 @@ body {
     min-width: 300px;
     display: flex;
     flex-direction: column;
+    background-color: $clr-dark;
 }
 
 a {
@@ -191,7 +192,7 @@ body {
 }
 
 .about {
-    background-color: $clr-dark;
+    background-color: transparent;
 
     padding-top: 94px;
     padding-bottom: 50px;
@@ -300,7 +301,7 @@ body {
 }
 
 .games {
-    background-color: $clr-dark;
+    background-color: transparent;
     padding-top: 46px;
     padding-bottom: 144px;
 

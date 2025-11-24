@@ -2,6 +2,7 @@ body {
   min-width: 300px;
   display: flex;
   flex-direction: column;
+  background-color: #202027;
 }
 
 a {
@@ -152,7 +153,7 @@ body {
 }
 
 .about {
-  background-color: #202027;
+  background-color: transparent;
   padding-top: 94px;
   padding-bottom: 50px;
   color: #FFF;
@@ -237,7 +238,7 @@ body {
 }
 
 .games {
-  background-color: #202027;
+  background-color: transparent;
   padding-top: 46px;
   padding-bottom: 144px;
   color: #FFF;
