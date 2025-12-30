@@ -90,17 +90,37 @@ body {
     }
 }
 
+@keyframes adsAnimation {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
 .animation {
-    min-width: 100vw;
+    width: 100vw;
     width: fit-content;
     height: 90px;
+    overflow: hidden;
 
     display: flex;
     align-items: center;
     background-color: $clr-dark-grn;
 
-    &__ul {
 
+
+    &__container {
+        min-width: max-content;
+        display: flex;
+        width: fit-content;
+        animation: adsAnimation 20s linear infinite;
+
+    }
+
+    &__ul {
         display: flex;
         align-items: center;
 

@@ -53,14 +53,31 @@ body {
   bottom: 0;
 }
 
+@keyframes adsAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
 .animation {
-  min-width: 100vw;
+  width: 100vw;
   width: -moz-fit-content;
   width: fit-content;
   height: 90px;
+  overflow: hidden;
   display: flex;
   align-items: center;
   background-color: #BCEC30;
+}
+.animation__container {
+  min-width: -moz-max-content;
+  min-width: max-content;
+  display: flex;
+  width: -moz-fit-content;
+  width: fit-content;
+  animation: adsAnimation 20s linear infinite;
 }
 .animation__ul {
   display: flex;
