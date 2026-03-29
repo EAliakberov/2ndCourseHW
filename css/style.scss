@@ -51,7 +51,6 @@ a {
     font-family: "Montserrat", sans-serif;
 
     transition: all 0.1s, width 0s;
-
 }
 
 h1 {
@@ -101,14 +100,46 @@ body {
 }
 
 .animation {
-    width: 100vw;
-    width: fit-content;
-    height: 90px;
-    overflow: hidden;
-
+    position: relative;
     display: flex;
-    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 90px;
+
     background-color: $clr-dark-grn;
+
+    &__limiter {
+        position: relative;
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: 2640px;
+        height: 100%;
+
+        align-items: center;
+        overflow: hidden;
+
+        display: flex;
+    }
+
+    &__fading-left {
+        position: absolute;
+        right: calc(100% - 600px);
+        width: 600px;
+        height: 100%;
+        background-image: linear-gradient(to right, $clr-dark-grn, transparent);
+        z-index: 100;
+        pointer-events: none;
+    }
+
+    &__fading-right {
+        position: absolute;
+        left: calc(100% - 600px);
+        width: 600px;
+        height: 100%;
+        background-image: linear-gradient(to left, $clr-dark-grn, transparent);
+        z-index: 100;
+        pointer-events: none;
+    }
 
 
 
@@ -117,7 +148,6 @@ body {
         display: flex;
         width: fit-content;
         animation: adsAnimation 20s linear infinite;
-
     }
 
     &__ul {
@@ -206,8 +236,24 @@ body {
         }
     }
 
-    &__lets-go-btn {
+    &__lets-go-btn-big {
         @include main-btn;
+    }
+
+    &__lets-go-btn-small {
+        @include main-btn;
+        margin: 0 5px;
+        padding: 16px 0px;
+        max-width: 284px;
+        width: 100%;
+        align-self: center;
+        display: none;
+
+
+        &:hover {
+            background-color: $clr-dark;
+            color: $clr-light;
+        }
     }
 }
 
@@ -457,7 +503,7 @@ body {
             margin-bottom: 36px;
         }
 
-        &__lets-go-btn {
+        &__lets-go-btn-big {
             font-size: 16px;
             line-height: 22px;
             padding-bottom: 16px;
@@ -536,8 +582,6 @@ body {
     }
 
     .games {
-
-
         &__content {
             gap: 24px;
         }
@@ -578,6 +622,9 @@ body {
     }
 }
 
+
+
+
 @media (max-width: 720px) {
     .center {
         padding-left: 16px;
@@ -613,18 +660,12 @@ body {
         background-image: url("../pictures/big_star_mobile.svg");
 
 
-        &__lets-go-btn {
-            margin: 0 5px;
-            padding: 16px 0px;
-            max-width: 284px;
-            width: 100%;
-            align-self: center;
+        &__lets-go-btn-big {
+            display: none;
+        }
 
-
-            &:hover {
-                background-color: $clr-dark;
-                color: $clr-light;
-            }
+        &__lets-go-btn-small {
+            display: block;
         }
 
         &::before {
