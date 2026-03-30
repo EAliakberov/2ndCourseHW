@@ -19,40 +19,74 @@
             <p class="wellcome__text">Тебе предстоит пройти несколько увлекательных игр. Если готов, нажимай
                 <b>«Поехали!»</b> и <b>приступай</b>.
             </p>
-            <a class="wellcome__lets-go-btn" href="#about-section">Поехали!</a>
+            <a class="wellcome__lets-go-btn-big" href="#about-section">Поехали!</a>
+            <a class="wellcome__lets-go-btn-small" href="#games-section">Поехали!</a>
             <div class="wellcome__animated-line"></div>
         </section>
         <div class="header__animation animation">
-            <ul class="animation__ul">
-                <li class="animation__li">
-                    <a href="#" class="animation__link">Викторина</a>
-                </li>
+            <div class="animation__limiter">
+                <div class="animation__container">
+                    <ul class="animation__ul">
+                        <li class="animation__li">
+                            <a href="#game__quiz" class="animation__link">Викторина</a>
+                        </li>
+
+                        <li class="animation__li">
+                            <a href="#game__numbers" class="animation__link">угадай число</a>
+                        </li>
 
 
-                <li class="animation__li">
-                    <a href="#" class="animation__link">угадай число</a>
-                </li>
+                        <li class="animation__li">
+                            <a href="#game__reverse" class="animation__link">Переверни текст</a>
+                        </li>
+
+                        <li class="animation__li">
+                            <a href="#game__arithmetic" class="animation__link">Простая арифметика</a>
+                        </li>
+
+                        <li class="animation__li">
+                            <a href="#game__rock-paper" class="animation__link">Камень, ножницы, бумага</a>
+                        </li>
+
+                        <li class="animation__li">
+                            <a href="#game__random" class="animation__link">Генератор случайных цветов</a>
+                        </li>
+                    </ul>
+                    <ul class="animation__ul">
+                        <li class="animation__li">
+                            <a href="#game__quiz" class="animation__link">Викторина</a>
+                        </li>
 
 
-                <li class="animation__li">
-                    <a href="#" class="animation__link">Переверни текст</a>
-                </li>
+                        <li class="animation__li">
+                            <a href="#game__numbers" class="animation__link">угадай число</a>
+                        </li>
 
 
-                <li class="animation__li">
-                    <a href="#" class="animation__link">Простая арифметика</a>
-                </li>
+                        <li class="animation__li">
+                            <a href="#game__reverse" class="animation__link">Переверни текст</a>
+                        </li>
 
 
-                <li class="animation__li">
-                    <a href="#" class="animation__link">Камень, ножницы, бумага</a>
-                </li>
+                        <li class="animation__li">
+                            <a href="#game__arithmetic" class="animation__link">Простая арифметика</a>
+                        </li>
 
 
-                <li class="animation__li">
-                    <a href="#" class="animation__link">Генератор случайных цветов</a>
-                </li>
-            </ul>
+                        <li class="animation__li">
+                            <a href="#game__rock-paper" class="animation__link">Камень, ножницы, бумага</a>
+                        </li>
+
+                        <li class="animation__li">
+                            <a href="#game__random" class="animation__link">Генератор случайных цветов</a>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="animation__fading-left"></div>
+                <div class="animation__fading-right"></div>
+            </div>
+
         </div>
     </header>
 
@@ -101,7 +135,7 @@
 
         </div>
     </section>
-    <section class="games center">
+    <section class="games center" id="games-section">
         <h2 class="games__header">Мини-игры</h2>
         <div class="games__content">
             <article class="games__item" id="game__numbers">
@@ -109,7 +143,7 @@
                 <div class="games__item-text">
                     <h3 class="games__item-header">Угадай число</h3>
                     <p class="games__item-description">Попробуй угадать случайное<br> число от 1 до 100.</p>
-                    <button class="games__item-button" id="btn-play-numbers" >Играть!</button>
+                    <button class="games__item-button" id="btn-play-numbers">Играть!</button>
                 </div>
             </article>
             <article class="games__item" id="game__arithmetic">

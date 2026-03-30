@@ -15,28 +15,31 @@ let gameNumbers = {
             hint = this.lastAns > this.randNum ? ` Загаданное число МЕНЬШЕ, чем ${this.lastAns}` : ` Загаданное число БОЛЬШЕ, чем ${this.lastAns}`;
         };
 
-        let ans = +prompt(`Попробуйте угдать число (осталось попыток: ${attempts}).\n` + hint + '\nВведите отрицательное число для выхода');
-        if (isNaN(ans)) {
+        let ans = prompt(`Попробуйте угдать число (осталось попыток: ${attempts}).\n` + hint + '\nВведите отрицательное число для выхода');
+        if (isNaN(+ans)) {
             alert('Вы ввели не число');
             return false;
         }
-        this.lastAns = ans;
-        return ans === this.randNum || ans < 0;
+        if (ans === null) {
+            return true;
+        }
+        this.lastAns = +ans;
+        return this.lastAns === this.randNum || this.lastAns < 0;
     },
 
     startGame() {
         this.randNum = Math.floor(Math.random() * 100 + 1);
         this.lastAns = NaN;
 
-        for (let tryNumber = 0; tryNumber < 10; tryNumber++) {
-            if (this.askUser(10 - tryNumber)) {
+        for (let attempts = 10; attempts > 0; attempts--) {
+            if (this.askUser(attempts)) {
                 break;
             }
         }
-        alert((this.randNum === this.lastAns ? 'Вы ' : 'Вы не ') + `угадали: загаданное число: ${this.randNum}; ваше число: ${this.lastAns}`);
+        if (!isNaN(this.lastAns)) {
+            alert((this.randNum === this.lastAns ? 'Вы ' : 'Вы не ') + `угадали: загаданное число: ${this.randNum}; ваше число: ${this.lastAns}`);
+        }
     }
-
-    
 }
 
 function playCalc() {
@@ -50,7 +53,7 @@ function playCalc() {
         let type = Math.floor(Math.random() * 4);
         let res = tasks[type].funk(a, b);
         let userAns = prompt(`Вычислите выражение ${a} ${tasks[type].sym} ${b}.\nДля выхода введите не число`);
-        if (isNaN(userAns)) break;
+        if (isNaN(userAns) || userAns === null) break;
         alert(Math.abs(+userAns - res) < 0.01 ? `Верно, правильный ответ ${res}` : `Неверно, правильный ответ ${res}`);
     }
 }
@@ -76,20 +79,24 @@ function quiz() {
 
     let scores = 0;
 
-    let askQuestion = function (q) {
+    for (let q of quiz) {
         let answ = prompt(q.question + '\n' + q.options.join('\n'));
-        return +(+answ === q.correctAnswer);
-    }
 
-    quiz.forEach(element => {
-        scores += askQuestion(element);
-    });
+        if (!(+answ)) {
+            return;
+        }
+        scores += +answ;
+    };
+
 
     alert(`Количество правильных ответов: ${scores} из ${quiz.length}`);
 }
+
 function reverse() {
-    let text = prompt('Введите текст', 'Образец текста');
-    alert(`Исходный текст: ${text}\nПеревернутый текст: ${text.split('').reverse().join('')}`);
+    let text = prompt('Введите текст', '');
+    if (text) {
+        alert(`Исходный текст: ${text}\nПеревернутый текст: ${text.split('').reverse().join('')}`);
+    }
 }
 
 function rockPaper() {
@@ -145,7 +152,9 @@ btnPlayReverse.addEventListener('click', (ev) => {
     reverse();
 })
 
+
+
 btnPlayRandom.addEventListener('click', (ev) => {
-    
+    document.body.style.backgroundColor = `rgb(${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)})`;
 })
 
